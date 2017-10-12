@@ -6,9 +6,12 @@ let barOne = document.getElementById('team1');
 let widthOne = 0;
 
 function moveOne() {
+
+  teamOne = document.getElementById('teamOneName').value;
+
   if (widthOne >= 100) {
 
-    alert("Team One is the winner!"); // TODO: Replace with dynamic team name
+    alert( teamOne + " is the winner!");
 
   } else {
 
@@ -24,9 +27,12 @@ let barTwo = document.getElementById('team2');
 let widthTwo = 0;
 
 function moveTwo() {
+
+  teamTwo = document.getElementById('teamTwoName').value;
+
   if (widthTwo >= 100) {
 
-    alert("Team Two is the winner!"); // TODO: Replace with dynamic team name
+    alert( teamTwo + " is the winner!");
 
   } else {
 
@@ -42,9 +48,12 @@ let barThree = document.getElementById('team3');
 let widthThree = 0;
 
 function moveThree() {
+
+  teamThree = document.getElementById('teamThreeName').value;
+
   if (widthThree >= 100) {
 
-    alert("Team Three is the winner!"); // TODO: Replace with dynamic team name
+    alert( teamThree + " is the winner!");
 
   } else {
 
@@ -60,9 +69,12 @@ let barFour = document.getElementById('team4');
 let widthFour = 0;
 
 function moveFour() {
+
+  teamFour = document.getElementById('teamFourName').value;
+
   if (widthFour >= 100) {
 
-    alert("Team Four is the winner!"); // TODO: Replace with dynamic team name
+    alert( teamFour + " is the winner!");
 
   } else {
 

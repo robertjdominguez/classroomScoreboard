@@ -1,114 +1,132 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Scoreboard</title>
-    <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
-  </head>
-  <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <ul class="nav navbar-nav">
-        <li><a href="#controls">Game Controls</a></li>
-        <li><a href="#board">Scoreboard</a></li>
-      </ul>
-    </nav>
-<div class="jumbotron">
-  <h1>Geography Scoreboard <span class="glyphicon glyphicon-globe"></span></h1>
-  <p>Today's geo-hacking is worth <b>50 XP</b> for each player on your team!</p>
-</div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Scoreboard</title>
+  <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
+</head>
 
-<div class="container" id="controls" style="border:1px solid">
-  <h1>Game Controls</h1>
-  <div class="col sm-4">
-  <small class="form-text text-muted">Fill out the information below to get started </small>
-    <div class="form-group">
-      <label for="questionNumber">How many questions will there be?</label>
-      <input type="text" id="questionNumber" value="">
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <ul class="nav navbar-nav">
+      <li><a href="#controls">Game Controls</a></li>
+      <li><a href="#board">Scoreboard</a></li>
+    </ul>
+  </nav>
+  <div class="jumbotron">
+    <h1>Classroom Scoreboard <span class="glyphicon glyphicon-globe"></span></h1>
+    <p>Keep track of in-class games with ease!</p>
+  </div>
+
+  <div class="container" id="controls" style="border:1px solid">
+    <h1>Game Controls</h1>
+    <div class="col sm-4">
+      <small class="form-text text-muted">Fill out the information below to get started </small>
+      <div class="form-group">
+        <label for="teamNumber">How many teams will there be?</label>
+        <br>
+        <input type="text" id="teamNumber" value="">
+      </div>
+      <div class="form-group">
+        <label for="questionNumber">How many questions will there be?</label>
+        <br>
+        <input type="text" id="questionNumber" value="">
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="majorityWin" name="optradio">Win by majority</label>
+        <br>
+        <small class="form-text text-muted">Select this option if there is a set number
+    of questions and a team
+  needs the majority to win.</small>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="sumWin" name="optradio">Win by sum</label>
+        <br>
+        <small class="form-text text-muted">Select this option if a team needs a certain
+    value to win. E.g., first team to ten.</small>
+      </div>
     </div>
-  </div>
 
-  <h3><strong>Team Names:</strong></h3>
-  <div class="form-group">
-    <label for="teamOneName">Team One's Name</label>
-    <input type="text" class="form-control" id="teamOneName" placeholder="Awesome Team Name">
-  </div>
-  <div class="form-group">
-    <label for="teamTwoName">Team Two's Name</label>
-    <input type="text" class="form-control" id="teamTwoName" placeholder="Awesome Team Name">
-  </div>
-  <div class="form-group">
-    <label for="teamThreeName">Team Three's Name</label>
-    <input type="text" class="form-control" id="teamThreeName" placeholder="Awesome Team Name">
-  </div>
-  <div class="form-group">
-    <label for="teamFourName">Team Four's Name</label>
-    <input type="text" class="form-control" id="teamFourName" placeholder="Awesome Team Name">
-  </div>
+    <h3><strong>Team Names:</strong></h3>
+    <div class="form-group">
+      <label for="teamOneName">Team One's Name</label>
+      <input type="text" class="form-control" id="teamOneName" placeholder="Awesome Team Name">
+    </div>
+    <div class="form-group">
+      <label for="teamTwoName">Team Two's Name</label>
+      <input type="text" class="form-control" id="teamTwoName" placeholder="Awesome Team Name">
+    </div>
+    <div class="form-group">
+      <label for="teamThreeName">Team Three's Name</label>
+      <input type="text" class="form-control" id="teamThreeName" placeholder="Awesome Team Name">
+    </div>
+    <div class="form-group">
+      <label for="teamFourName">Team Four's Name</label>
+      <input type="text" class="form-control" id="teamFourName" placeholder="Awesome Team Name">
+    </div>
 
-  <button type="button" class="btn btn-success" onclick="gameData();" name="button" href="#board">Let's Play</button>
-
-
-  </div>
-</div>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+    <button type="button" class="btn btn-success" onclick="gameData();questionSet();" name="button" href="#board">Let's Play</button>
 
 
-<div class="container" id="board" style="border:1px solid">
-  <h1>Teams</h1>
-  <h3 id="teamOne"></h3>
-<div class="progress">
-  <div class="progress-bar progress-bar-striped active" id="team1" role="progressbar"
-  aria-valuenow="40" aria-valuemin="0" aria-valuemax="10" style="width:0%">
-  </div>
-</div>
-
-<div class="container">
-<button type="button" class="btn btn-success" onclick="moveOne();" name="button">+</button>
-</div>
-
-  <h3 id="teamTwo"></h3>
-  <div class="progress">
-  <div class="progress-bar progress-bar-striped active" id="team2" role="progressbar"
-  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%">
   </div>
   </div>
 
-  <div class="container">
-  <button type="button" class="btn btn-success" onclick="moveTwo();" name="button">+</button>
-  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
-  <h3 id="teamThree"></h3>
-  <div class="progress">
-  <div class="progress-bar progress-bar-striped active" id="team3" role="progressbar"
-  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-  </div>
-  </div>
 
-  <div class="container">
-  <button type="button" class="btn btn-success" onclick="moveThree();" name="button">+</button>
-  </div>
+  <div class="container" id="board" style="border:1px solid">
+    <h1>Teams</h1>
+    <h3 id="teamOne"></h3>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped active" id="team1" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="10" style="width:0%">
+      </div>
+    </div>
 
-  <h3 id="teamFour"></h3>
-  <div class="progress">
-  <div class="progress-bar progress-bar-striped active" id="team4" role="progressbar"
-  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-  </div>
-  </div>
+    <div class="container">
+      <button type="button" class="btn btn-success" onclick="moveOne();" name="button">+</button>
+    </div>
 
-  <div class="container">
-  <button type="button" class="btn btn-success" onclick="moveFour();" name="button">+</button>
-  </div>
+    <h3 id="teamTwo"></h3>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped active" id="team2" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+      </div>
+    </div>
+
+    <div class="container">
+      <button type="button" class="btn btn-success" onclick="moveTwo();" name="button">+</button>
+    </div>
+
+    <h3 id="teamThree"></h3>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped active" id="team3" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+      </div>
+    </div>
+
+    <div class="container">
+      <button type="button" class="btn btn-success" onclick="moveThree();" name="button">+</button>
+    </div>
+
+    <h3 id="teamFour"></h3>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped active" id="team4" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+      </div>
+    </div>
+
+    <div class="container">
+      <button type="button" class="btn btn-success" onclick="moveFour();" name="button">+</button>
+    </div>
 
   </div>
-  </body>
-  <footer>Made by <strong>Rob</strong></footer>
+</body>
+<footer>Made by <strong><a href="https://github.com/robertjdominguez">Rob</a></strong></footer>
 
 <script src="scoreboard.js" charset="utf-8"></script>
 <script src="controller.js" charset="utf-8"></script>
